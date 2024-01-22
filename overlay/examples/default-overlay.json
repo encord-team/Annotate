@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/encord-team/dicom/main/overlay/schema.json",
+  "items": {
+    "bottomLeft": [
+      {
+        "content": "Series: {0020000e}"
+      },
+      {
+        "content": "Study: {0020000d}"
+      }
+    ],
+    "bottomRight": [
+      {
+        "content": "{windowing}"
+      },
+      {
+        "content": "{sliceNumber}"
+      }
+    ],
+    "topLeft": [
+      {
+        "content": "{pixelValue}"
+      },
+      {
+        "content": "{00100010}"
+      }
+    ]
+  }
+}

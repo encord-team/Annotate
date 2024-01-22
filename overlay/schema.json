@@ -1,0 +1,63 @@
+{
+  "title": "DicomOverlayModel",
+  "type": "object",
+  "properties": {
+    "items": { "$ref": "#/definitions/OverlayItems" },
+    "fontSize": {
+      "title": "Fontsize",
+      "description": "The font size relative to Encord's default size. Default value is 1",
+      "exclusiveMinimum": 0.5,
+      "exclusiveMaximum": 3,
+      "type": "number"
+    }
+  },
+  "required": ["items"],
+  "definitions": {
+    "OverlayItem": {
+      "title": "OverlayItem",
+      "type": "object",
+      "properties": {
+        "content": {
+          "title": "Content",
+          "description": "A template string used to format a .dcm tag value, for example 'Modality: {00080060}', or information about the context, e.g. {sliceNumber}.\n- {sliceNumber}: the current slice number out of the total number of slices, starting from 0. Empty if there is only one slice. Example: '3/200'.\n- {pixelValue}: the pixel value at the current mouse position. Only for grayscale images.\n- {windowing}: the current windowing width and length. Example: 'W: 400 L: 40'",
+          "maxLength": 100,
+          "pattern": ".*\\{([0-9a-f]{8}|(sliceNumber)|(pixelValue)|(windowing))\\}.*",
+          "type": "string"
+        }
+      },
+      "required": ["content"],
+      "additionalProperties": false
+    },
+    "OverlayItems": {
+      "title": "OverlayItems",
+      "type": "object",
+      "properties": {
+        "bottomLeft": {
+          "title": "Bottomleft",
+          "maxItems": 10,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OverlayItem" }
+        },
+        "bottomRight": {
+          "title": "Bottomright",
+          "maxItems": 10,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OverlayItem" }
+        },
+        "topLeft": {
+          "title": "Topleft",
+          "maxItems": 10,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OverlayItem" }
+        },
+        "topRight": {
+          "title": "Topright",
+          "maxItems": 10,
+          "type": "array",
+          "items": { "$ref": "#/definitions/OverlayItem" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

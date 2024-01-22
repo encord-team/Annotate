@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/encord-team/dicom/main/overlay/schema.json",
+  "items": {
+    "bottomLeft": [
+      {
+        "content": "{sliceNumber}"
+      },
+      {
+        "content": "{04000510}"
+      },
+      {
+        "content": "Position: {00185101}"
+      }
+    ],
+    "topRight": [
+      {
+        "content": "{00100010}, {00100020}"
+      },
+      {
+        "content": "{00081030}"
+      },
+      {
+        "content": "{0008103e}"
+      },
+      {
+        "content": "{00200011}"
+      }
+    ],
+    "topLeft": [
+      {
+        "content": "Image size: {00280010}x{00280011}"
+      },
+      {
+        "content": "{windowing}"
+      },
+      {
+        "content": "{pixelValue}"
+      }
+    ]
+  }
+}
