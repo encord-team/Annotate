@@ -55,5 +55,5 @@
       "key": "layout-group"
     }
   },
-  "$schema": "https://github.com/encord-team/Annotate/blob/main/editor-layouts/editor_layout_schema.json"
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
 }
