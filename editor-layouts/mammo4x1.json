@@ -21,12 +21,12 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "CC",
+            "value": "MLO",
             "operator": "="
           },
           {
             "tag": "00200062",
-            "value": "L",
+            "value": "R",
             "operator": "="
           }
         ]
@@ -69,12 +69,12 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "MLO",
+            "value": "CC",
             "operator": "="
           },
           {
             "tag": "00200062",
-            "value": "R",
+            "value": "L",
             "operator": "="
           }
         ]

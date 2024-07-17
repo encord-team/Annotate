@@ -20,7 +20,7 @@
           },
           {
             "tag": "00200062",
-            "value": "L",
+            "value": "R",
             "operator": "="
           }
         ]
@@ -36,7 +36,7 @@
           },
           {
             "tag": "00200062",
-            "value": "R",
+            "value": "L",
             "operator": "="
           }
         ]
@@ -52,7 +52,7 @@
           },
           {
             "tag": "00200062",
-            "value": "L",
+            "value": "R",
             "operator": "="
           }
         ]
@@ -68,7 +68,7 @@
           },
           {
             "tag": "00200062",
-            "value": "R",
+            "value": "L",
             "operator": "="
           }
         ]
