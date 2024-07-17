@@ -1,0 +1,59 @@
+{
+  "grid": [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ],
+  "gridContent": {
+    "0": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "group-id",
+            "value": "A",
+            "operator": "="
+          },
+          {
+            "key": "group-id",
+            "value": "B",
+            "operator": "="
+          }
+        ]
+      }
+    },
+    "1": {
+      "client_metadata_query": {
+        "or_conditions": [
+          {
+            "key": "group-id",
+            "value": "C",
+            "operator": "="
+          },
+          {
+            "and_conditions": [
+              {
+                "key": "group-id",
+                "value": "D",
+                "operator": "="
+              },
+              {
+                "key": "group-id",
+                "value": "E",
+                "operator": "="
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "topLevelGridFilter": {
+    "metadata": {
+      "key": "layout-group"
+    }
+  },
+  "$schema": "./project_layout_schema.json"
+}

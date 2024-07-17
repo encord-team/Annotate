@@ -1,0 +1,79 @@
+{
+  "grid": [
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "gridContent": {
+    "0": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "value": "CC",
+            "operator": "="
+          },
+          {
+            "tag": "00200062",
+            "value": "L",
+            "operator": "="
+          }
+        ]
+      }
+    },
+    "1": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "value": "CC",
+            "operator": "="
+          },
+          {
+            "tag": "00200062",
+            "value": "R",
+            "operator": "="
+          }
+        ]
+      }
+    },
+    "2": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "value": "MLO",
+            "operator": "="
+          },
+          {
+            "tag": "00200062",
+            "value": "L",
+            "operator": "="
+          }
+        ]
+      }
+    },
+    "3": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "value": "MLO",
+            "operator": "="
+          },
+          {
+            "tag": "00200062",
+            "value": "R",
+            "operator": "="
+          }
+        ]
+      }
+    }
+  },
+  "$schema": "./project_layout_schema.json"
+}

@@ -1,0 +1,509 @@
+{
+  "$defs": {
+    "AndDicomTagComparison": {
+      "properties": {
+        "and_conditions": {
+          "description": "List of search conditions combined with AND",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DicomTagComparison"
+              },
+              {
+                "$ref": "#/$defs/AndDicomTagComparison"
+              },
+              {
+                "$ref": "#/$defs/OrDicomTagComparison"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "And Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "and_conditions"
+      ],
+      "title": "AndDicomTagComparison",
+      "type": "object"
+    },
+    "AndDicomTagObject": {
+      "properties": {
+        "and_conditions": {
+          "description": "List of search conditions combined with AND",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DicomTagObject"
+              },
+              {
+                "$ref": "#/$defs/AndDicomTagObject"
+              },
+              {
+                "$ref": "#/$defs/OrDicomTagObject"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "And Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "and_conditions"
+      ],
+      "title": "AndDicomTagObject",
+      "type": "object"
+    },
+    "AndMetadataComparison": {
+      "properties": {
+        "and_conditions": {
+          "description": "List of search conditions combined with AND",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/MetadataComparison"
+              },
+              {
+                "$ref": "#/$defs/AndMetadataComparison"
+              },
+              {
+                "$ref": "#/$defs/OrMetadataComparison"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "And Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "and_conditions"
+      ],
+      "title": "AndMetadataComparison",
+      "type": "object"
+    },
+    "AndMetadataKeyObject": {
+      "properties": {
+        "and_conditions": {
+          "description": "List of search conditions combined with AND",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/MetadataKeyObject"
+              },
+              {
+                "$ref": "#/$defs/AndMetadataKeyObject"
+              },
+              {
+                "$ref": "#/$defs/OrMetadataKeyObject"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "And Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "and_conditions"
+      ],
+      "title": "AndMetadataKeyObject",
+      "type": "object"
+    },
+    "ComparisonOperator": {
+      "const": "=",
+      "enum": [
+        "="
+      ],
+      "title": "ComparisonOperator",
+      "type": "string"
+    },
+    "ContentQuery": {
+      "additionalProperties": false,
+      "properties": {
+        "dicom_tags_query": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DicomTagComparison"
+            },
+            {
+              "$ref": "#/$defs/AndDicomTagComparison"
+            },
+            {
+              "$ref": "#/$defs/OrDicomTagComparison"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "DICOM query represented as a combination of search conditions",
+          "title": "Dicom Tags Query"
+        },
+        "client_metadata_query": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataComparison"
+            },
+            {
+              "$ref": "#/$defs/AndMetadataComparison"
+            },
+            {
+              "$ref": "#/$defs/OrMetadataComparison"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Client metadata query represented as a combination of search conditions",
+          "title": "Client Metadata Query"
+        }
+      },
+      "title": "ContentQuery",
+      "type": "object"
+    },
+    "ContentSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "dicom_tags": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DicomTagObject"
+            },
+            {
+              "$ref": "#/$defs/AndDicomTagObject"
+            },
+            {
+              "$ref": "#/$defs/OrDicomTagObject"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dicom Tags"
+        },
+        "metadata": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MetadataKeyObject"
+            },
+            {
+              "$ref": "#/$defs/AndMetadataKeyObject"
+            },
+            {
+              "$ref": "#/$defs/OrMetadataKeyObject"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Metadata"
+        }
+      },
+      "title": "ContentSelection",
+      "type": "object"
+    },
+    "DicomTagComparison": {
+      "properties": {
+        "tag": {
+          "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
+          "pattern": "^[0-9a-f]{8}$",
+          "title": "Tag",
+          "type": "string"
+        },
+        "value": {
+          "description": "String value to match against the DICOM tag",
+          "pattern": "^[a-zA-Z0-9_\\-.]+$",
+          "title": "Value",
+          "type": "string"
+        },
+        "operator": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ComparisonOperator"
+            }
+          ],
+          "description": "Comparison operator"
+        }
+      },
+      "required": [
+        "tag",
+        "value",
+        "operator"
+      ],
+      "title": "DicomTagComparison",
+      "type": "object"
+    },
+    "DicomTagObject": {
+      "properties": {
+        "tag": {
+          "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
+          "pattern": "^[0-9a-f]{8}$",
+          "title": "Tag",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tag"
+      ],
+      "title": "DicomTagObject",
+      "type": "object"
+    },
+    "Grid": {
+      "properties": {
+        "direction": {
+          "enum": [
+            "row",
+            "column"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "first": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Grid"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "First"
+        },
+        "second": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Grid"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Second"
+        },
+        "splitPercentage": {
+          "maximum": 95.0,
+          "minimum": 5.0,
+          "title": "Splitpercentage",
+          "type": "number"
+        }
+      },
+      "required": [
+        "direction",
+        "first",
+        "second",
+        "splitPercentage"
+      ],
+      "title": "Grid",
+      "type": "object"
+    },
+    "MetadataComparison": {
+      "properties": {
+        "key": {
+          "description": "Client metadata key",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "description": "String value to match against the metadata key",
+          "pattern": "^[a-zA-Z0-9_\\-.]+$",
+          "title": "Value",
+          "type": "string"
+        },
+        "operator": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ComparisonOperator"
+            }
+          ],
+          "description": "Comparison operator"
+        }
+      },
+      "required": [
+        "key",
+        "value",
+        "operator"
+      ],
+      "title": "MetadataComparison",
+      "type": "object"
+    },
+    "MetadataKeyObject": {
+      "properties": {
+        "key": {
+          "description": "Client metadata key",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "title": "Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key"
+      ],
+      "title": "MetadataKeyObject",
+      "type": "object"
+    },
+    "OrDicomTagComparison": {
+      "properties": {
+        "or_conditions": {
+          "description": "List of search conditions combined with OR",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DicomTagComparison"
+              },
+              {
+                "$ref": "#/$defs/OrDicomTagComparison"
+              },
+              {
+                "$ref": "#/$defs/AndDicomTagComparison"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "Or Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "or_conditions"
+      ],
+      "title": "OrDicomTagComparison",
+      "type": "object"
+    },
+    "OrDicomTagObject": {
+      "properties": {
+        "or_conditions": {
+          "description": "List of search conditions combined with OR",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/DicomTagObject"
+              },
+              {
+                "$ref": "#/$defs/OrDicomTagObject"
+              },
+              {
+                "$ref": "#/$defs/AndDicomTagObject"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "Or Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "or_conditions"
+      ],
+      "title": "OrDicomTagObject",
+      "type": "object"
+    },
+    "OrMetadataComparison": {
+      "properties": {
+        "or_conditions": {
+          "description": "List of search conditions combined with OR",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/MetadataComparison"
+              },
+              {
+                "$ref": "#/$defs/OrMetadataComparison"
+              },
+              {
+                "$ref": "#/$defs/AndMetadataComparison"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "Or Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "or_conditions"
+      ],
+      "title": "OrMetadataComparison",
+      "type": "object"
+    },
+    "OrMetadataKeyObject": {
+      "properties": {
+        "or_conditions": {
+          "description": "List of search conditions combined with OR",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/MetadataKeyObject"
+              },
+              {
+                "$ref": "#/$defs/AndMetadataKeyObject"
+              },
+              {
+                "$ref": "#/$defs/OrMetadataKeyObject"
+              }
+            ]
+          },
+          "minItems": 2,
+          "title": "Or Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "or_conditions"
+      ],
+      "title": "OrMetadataKeyObject",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "grid": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Grid"
+        },
+        {
+          "items": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "type": "array"
+        }
+      ],
+      "description": "Layout of the grid where each element is represented by a number. Can be specified as a nested list of integers or as an object to have more control over the tile sizes.",
+      "title": "Grid"
+    },
+    "gridContent": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ContentQuery"
+      },
+      "title": "Gridcontent",
+      "type": "object"
+    },
+    "topLevelGridFilter": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ContentSelection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "\n            Ensures that every element in the grid matches the data unit being annotated. For example, by specifying {\"metadata\": { \"key\": \"group\"}}, every\n            data unit in the layout will have its \"group\" value equal to the data unit's \"group\" value."
+    }
+  },
+  "required": [
+    "grid",
+    "gridContent"
+  ],
+  "title": "ProjectLayoutInput",
+  "type": "object"
+}
