@@ -75,5 +75,5 @@
       }
     }
   },
-  "$schema": "./project_layout_schema.json"
+  "$schema": "https://github.com/encord-team/Annotate/blob/main/editor-layouts/editor_layout_schema.json"
 }
