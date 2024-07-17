@@ -186,7 +186,7 @@
           "default": null,
           "title": "Dicom Tags"
         },
-        "metadata": {
+        "client_metadata": {
           "anyOf": [
             {
               "$ref": "#/$defs/MetadataKeyObject"
@@ -202,7 +202,7 @@
             }
           ],
           "default": null,
-          "title": "Metadata"
+          "title": "Client Metadata"
         }
       },
       "title": "ContentSelection",
@@ -216,10 +216,35 @@
           "title": "Tag",
           "type": "string"
         },
+        "operator": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ComparisonOperator"
+            }
+          ],
+          "description": "Comparison operator"
+        },
         "value": {
           "description": "String value to match against the DICOM tag",
           "pattern": "^[a-zA-Z0-9_\\-.]+$",
           "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tag",
+        "operator",
+        "value"
+      ],
+      "title": "DicomTagComparison",
+      "type": "object"
+    },
+    "DicomTagObject": {
+      "properties": {
+        "tag": {
+          "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
+          "pattern": "^[0-9a-f]{8}$",
+          "title": "Tag",
           "type": "string"
         },
         "operator": {
@@ -233,23 +258,7 @@
       },
       "required": [
         "tag",
-        "value",
         "operator"
-      ],
-      "title": "DicomTagComparison",
-      "type": "object"
-    },
-    "DicomTagObject": {
-      "properties": {
-        "tag": {
-          "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
-          "pattern": "^[0-9a-f]{8}$",
-          "title": "Tag",
-          "type": "string"
-        }
-      },
-      "required": [
-        "tag"
       ],
       "title": "DicomTagObject",
       "type": "object"
@@ -310,10 +319,35 @@
           "title": "Key",
           "type": "string"
         },
+        "operator": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ComparisonOperator"
+            }
+          ],
+          "description": "Comparison operator"
+        },
         "value": {
           "description": "String value to match against the metadata key",
           "pattern": "^[a-zA-Z0-9_\\-.]+$",
           "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "operator",
+        "value"
+      ],
+      "title": "MetadataComparison",
+      "type": "object"
+    },
+    "MetadataKeyObject": {
+      "properties": {
+        "key": {
+          "description": "Client metadata key",
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "title": "Key",
           "type": "string"
         },
         "operator": {
@@ -327,23 +361,7 @@
       },
       "required": [
         "key",
-        "value",
         "operator"
-      ],
-      "title": "MetadataComparison",
-      "type": "object"
-    },
-    "MetadataKeyObject": {
-      "properties": {
-        "key": {
-          "description": "Client metadata key",
-          "pattern": "^[a-zA-Z0-9_\\-]+$",
-          "title": "Key",
-          "type": "string"
-        }
-      },
-      "required": [
-        "key"
       ],
       "title": "MetadataKeyObject",
       "type": "object"

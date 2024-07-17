@@ -21,13 +21,13 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "MLO",
-            "operator": "="
+            "operator": "=",
+            "value": "MLO"
           },
           {
             "tag": "00200062",
-            "value": "R",
-            "operator": "="
+            "operator": "=",
+            "value": "R"
           }
         ]
       }
@@ -37,13 +37,13 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "CC",
-            "operator": "="
+            "operator": "=",
+            "value": "CC"
           },
           {
             "tag": "00200062",
-            "value": "R",
-            "operator": "="
+            "operator": "=",
+            "value": "R"
           }
         ]
       }
@@ -53,13 +53,13 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "MLO",
-            "operator": "="
+            "operator": "=",
+            "value": "MLO"
           },
           {
             "tag": "00200062",
-            "value": "L",
-            "operator": "="
+            "operator": "=",
+            "value": "L"
           }
         ]
       }
@@ -69,13 +69,13 @@
         "and_conditions": [
           {
             "tag": "00185101",
-            "value": "CC",
-            "operator": "="
+            "operator": "=",
+            "value": "CC"
           },
           {
             "tag": "00200062",
-            "value": "L",
-            "operator": "="
+            "operator": "=",
+            "value": "L"
           }
         ]
       }

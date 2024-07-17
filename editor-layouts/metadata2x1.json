@@ -13,13 +13,13 @@
         "or_conditions": [
           {
             "key": "group-id",
-            "value": "A",
-            "operator": "="
+            "operator": "=",
+            "value": "A"
           },
           {
             "key": "group-id",
-            "value": "B",
-            "operator": "="
+            "operator": "=",
+            "value": "B"
           }
         ]
       }
@@ -29,20 +29,20 @@
         "or_conditions": [
           {
             "key": "group-id",
-            "value": "C",
-            "operator": "="
+            "operator": "=",
+            "value": "C"
           },
           {
             "and_conditions": [
               {
                 "key": "group-id",
-                "value": "D",
-                "operator": "="
+                "operator": "=",
+                "value": "D"
               },
               {
                 "key": "group-id",
-                "value": "E",
-                "operator": "="
+                "operator": "=",
+                "value": "E"
               }
             ]
           }
@@ -51,8 +51,9 @@
     }
   },
   "topLevelGridFilter": {
-    "metadata": {
-      "key": "layout-group"
+    "client_metadata": {
+      "key": "layout-group",
+      "operator": "="
     }
   },
   "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
