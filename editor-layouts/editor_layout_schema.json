@@ -212,7 +212,7 @@
       "properties": {
         "tag": {
           "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
-          "pattern": "^[0-9a-f]{8}$",
+          "pattern": "^[0-9A-F]{8}$",
           "title": "Tag",
           "type": "string"
         },
@@ -226,7 +226,8 @@
         },
         "value": {
           "description": "String value to match against the DICOM tag",
-          "pattern": "^[a-zA-Z0-9_\\-.]+$",
+          "maxLength": 300,
+          "minLength": 1,
           "title": "Value",
           "type": "string"
         }
@@ -243,7 +244,7 @@
       "properties": {
         "tag": {
           "description": "DICOM tag (e.g., 00080060, 00200060, 00185101)",
-          "pattern": "^[0-9a-f]{8}$",
+          "pattern": "^[0-9A-F]{8}$",
           "title": "Tag",
           "type": "string"
         },
@@ -315,7 +316,8 @@
       "properties": {
         "key": {
           "description": "Client metadata key",
-          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "maxLength": 300,
+          "minLength": 1,
           "title": "Key",
           "type": "string"
         },
@@ -329,7 +331,8 @@
         },
         "value": {
           "description": "String value to match against the metadata key",
-          "pattern": "^[a-zA-Z0-9_\\-.]+$",
+          "maxLength": 300,
+          "minLength": 1,
           "title": "Value",
           "type": "string"
         }
@@ -346,7 +349,8 @@
       "properties": {
         "key": {
           "description": "Client metadata key",
-          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "maxLength": 300,
+          "minLength": 1,
           "title": "Key",
           "type": "string"
         },
@@ -515,7 +519,7 @@
         }
       ],
       "default": null,
-      "description": "\n            Ensures that every element in the grid matches the data unit being annotated. For example, by specifying {\"metadata\": { \"key\": \"group\"}}, every\n            data unit in the layout will have its \"group\" value equal to the data unit's \"group\" value."
+      "description": "\n            Ensures that every element in the grid has the same value. For example, by specifying {\"client_metadata\": { \"key\": \"group\", operation: \"=\" }}, every\n            data unit in the layout will have its \"group\" value equal to the data unit's \"group\" value."
     }
   },
   "required": [

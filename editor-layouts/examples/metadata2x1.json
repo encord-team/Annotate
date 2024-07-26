@@ -1,12 +1,10 @@
 {
-  "grid": [
-    [
-      0
-    ],
-    [
-      1
-    ]
-  ],
+  "grid": {
+    "direction": "row",
+    "first": 0,
+    "second": 1,
+    "splitPercentage": 30.0
+  },
   "gridContent": {
     "0": {
       "client_metadata_query": {
