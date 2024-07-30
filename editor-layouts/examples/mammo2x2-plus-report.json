@@ -1,0 +1,103 @@
+{
+  "grid": {
+    "direction": "row",
+    "first": 0,
+    "second": {
+      "splitPercentage": 50,
+      "direction": "column",
+      "first": {
+        "splitPercentage": 50,
+        "direction": "row",
+        "first": 1,
+        "second": 2
+      },
+      "second": {
+        "splitPercentage": 50,
+        "direction": "row",
+        "first": 3,
+        "second": 4
+      }
+    },
+    "splitPercentage": 30.0
+  },
+  "gridContent": {
+    "0": {
+      "client_metadata_query": {
+        "key": "kind",
+        "operator": "=",
+        "value": "report"
+      }
+    },
+    "1": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "operator": "=",
+            "value": "MLO"
+          },
+          {
+            "tag": "00200062",
+            "operator": "=",
+            "value": "R"
+          }
+        ]
+      }
+    },
+    "2": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "operator": "=",
+            "value": "CC"
+          },
+          {
+            "tag": "00200062",
+            "operator": "=",
+            "value": "R"
+          }
+        ]
+      }
+    },
+    "3": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "operator": "=",
+            "value": "MLO"
+          },
+          {
+            "tag": "00200062",
+            "operator": "=",
+            "value": "L"
+          }
+        ]
+      }
+    },
+    "4": {
+      "dicom_tags_query": {
+        "and_conditions": [
+          {
+            "tag": "00185101",
+            "operator": "=",
+            "value": "CC"
+          },
+          {
+            "tag": "00200062",
+            "operator": "=",
+            "value": "L"
+          }
+        ]
+      }
+    }
+  },
+  "topLevelGridFilter": {
+    "client_metadata": {
+      "key": "study",
+      "operator": "="
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
+}
