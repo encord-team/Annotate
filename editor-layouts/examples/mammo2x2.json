@@ -69,5 +69,11 @@
       }
     }
   },
+  "topLevelGridFilter": {
+    "dicom_tags": {
+      "tag": "0020000D",
+      "operator": "="
+    }
+  },
   "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/editor-layouts/editor_layout_schema.json"
 }
