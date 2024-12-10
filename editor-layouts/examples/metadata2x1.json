@@ -7,8 +7,8 @@
   },
   "gridContent": {
     "0": {
-      "client_metadata_query": {
-        "or_conditions": [
+      "clientMetadataQuery": {
+        "orConditions": [
           {
             "key": "group-id",
             "operator": "=",
@@ -23,15 +23,15 @@
       }
     },
     "1": {
-      "client_metadata_query": {
-        "or_conditions": [
+      "clientMetadataQuery": {
+        "orConditions": [
           {
             "key": "group-id",
             "operator": "=",
             "value": "C"
           },
           {
-            "and_conditions": [
+            "andConditions": [
               {
                 "key": "group-id",
                 "operator": "=",
@@ -49,7 +49,7 @@
     }
   },
   "topLevelGridFilter": {
-    "client_metadata": {
+    "clientMetadata": {
       "key": "layout-group",
       "operator": "="
     }
