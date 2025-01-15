@@ -2,8 +2,8 @@
   "grid": [[0], [1], [2], [3]],
   "gridContent": {
     "0": {
-      "dicom_tags_query": {
-        "and_conditions": [
+      "dicomTagsQuery": {
+        "andConditions": [
           {
             "tag": "00185101",
             "operator": "=",
@@ -18,8 +18,8 @@
       }
     },
     "1": {
-      "dicom_tags_query": {
-        "and_conditions": [
+      "dicomTagsQuery": {
+        "andConditions": [
           {
             "tag": "00185101",
             "operator": "=",
@@ -34,8 +34,8 @@
       }
     },
     "2": {
-      "dicom_tags_query": {
-        "and_conditions": [
+      "dicomTagsQuery": {
+        "andConditions": [
           {
             "tag": "00185101",
             "operator": "=",
@@ -50,8 +50,8 @@
       }
     },
     "3": {
-      "dicom_tags_query": {
-        "and_conditions": [
+      "dicomTagsQuery": {
+        "andConditions": [
           {
             "tag": "00185101",
             "operator": "=",

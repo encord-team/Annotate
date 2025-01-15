@@ -2,7 +2,7 @@
   "$defs": {
     "AndDicomTagComparison": {
       "properties": {
-        "and_conditions": {
+        "andConditions": {
           "description": "List of search conditions combined with AND",
           "items": {
             "anyOf": [
@@ -18,19 +18,17 @@
             ]
           },
           "minItems": 2,
-          "title": "And Conditions",
+          "title": "Andconditions",
           "type": "array"
         }
       },
-      "required": [
-        "and_conditions"
-      ],
+      "required": ["andConditions"],
       "title": "AndDicomTagComparison",
       "type": "object"
     },
     "AndDicomTagObject": {
       "properties": {
-        "and_conditions": {
+        "andConditions": {
           "description": "List of search conditions combined with AND",
           "items": {
             "anyOf": [
@@ -46,19 +44,17 @@
             ]
           },
           "minItems": 2,
-          "title": "And Conditions",
+          "title": "Andconditions",
           "type": "array"
         }
       },
-      "required": [
-        "and_conditions"
-      ],
+      "required": ["andConditions"],
       "title": "AndDicomTagObject",
       "type": "object"
     },
     "AndMetadataComparison": {
       "properties": {
-        "and_conditions": {
+        "andConditions": {
           "description": "List of search conditions combined with AND",
           "items": {
             "anyOf": [
@@ -74,19 +70,17 @@
             ]
           },
           "minItems": 2,
-          "title": "And Conditions",
+          "title": "Andconditions",
           "type": "array"
         }
       },
-      "required": [
-        "and_conditions"
-      ],
+      "required": ["andConditions"],
       "title": "AndMetadataComparison",
       "type": "object"
     },
     "AndMetadataKeyObject": {
       "properties": {
-        "and_conditions": {
+        "andConditions": {
           "description": "List of search conditions combined with AND",
           "items": {
             "anyOf": [
@@ -102,28 +96,24 @@
             ]
           },
           "minItems": 2,
-          "title": "And Conditions",
+          "title": "Andconditions",
           "type": "array"
         }
       },
-      "required": [
-        "and_conditions"
-      ],
+      "required": ["andConditions"],
       "title": "AndMetadataKeyObject",
       "type": "object"
     },
     "ComparisonOperator": {
       "const": "=",
-      "enum": [
-        "="
-      ],
+      "enum": ["="],
       "title": "ComparisonOperator",
       "type": "string"
     },
     "ContentQuery": {
       "additionalProperties": false,
       "properties": {
-        "dicom_tags_query": {
+        "dicomTagsQuery": {
           "anyOf": [
             {
               "$ref": "#/$defs/DicomTagComparison"
@@ -140,9 +130,9 @@
           ],
           "default": null,
           "description": "DICOM query represented as a combination of search conditions",
-          "title": "Dicom Tags Query"
+          "title": "Dicomtagsquery"
         },
-        "client_metadata_query": {
+        "clientMetadataQuery": {
           "anyOf": [
             {
               "$ref": "#/$defs/MetadataComparison"
@@ -159,7 +149,7 @@
           ],
           "default": null,
           "description": "Client metadata query represented as a combination of search conditions",
-          "title": "Client Metadata Query"
+          "title": "Clientmetadataquery"
         }
       },
       "title": "ContentQuery",
@@ -168,7 +158,7 @@
     "ContentSelection": {
       "additionalProperties": false,
       "properties": {
-        "dicom_tags": {
+        "dicomTags": {
           "anyOf": [
             {
               "$ref": "#/$defs/DicomTagObject"
@@ -184,9 +174,9 @@
             }
           ],
           "default": null,
-          "title": "Dicom Tags"
+          "title": "Dicomtags"
         },
-        "client_metadata": {
+        "clientMetadata": {
           "anyOf": [
             {
               "$ref": "#/$defs/MetadataKeyObject"
@@ -202,7 +192,7 @@
             }
           ],
           "default": null,
-          "title": "Client Metadata"
+          "title": "Clientmetadata"
         }
       },
       "title": "ContentSelection",
@@ -232,11 +222,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "tag",
-        "operator",
-        "value"
-      ],
+      "required": ["tag", "operator", "value"],
       "title": "DicomTagComparison",
       "type": "object"
     },
@@ -257,20 +243,26 @@
           "description": "Comparison operator"
         }
       },
-      "required": [
-        "tag",
-        "operator"
-      ],
+      "required": ["tag", "operator"],
       "title": "DicomTagObject",
+      "type": "object"
+    },
+    "EditorLayoutSettings": {
+      "properties": {
+        "fixedLayout": {
+          "default": false,
+          "description": "Set layout to fixed, so you can't add/remove panes or change to a different layout",
+          "title": "Fixedlayout",
+          "type": "boolean"
+        }
+      },
+      "title": "EditorLayoutSettings",
       "type": "object"
     },
     "Grid": {
       "properties": {
         "direction": {
-          "enum": [
-            "row",
-            "column"
-          ],
+          "enum": ["row", "column"],
           "title": "Direction",
           "type": "string"
         },
@@ -303,12 +295,7 @@
           "type": "number"
         }
       },
-      "required": [
-        "direction",
-        "first",
-        "second",
-        "splitPercentage"
-      ],
+      "required": ["direction", "first", "second", "splitPercentage"],
       "title": "Grid",
       "type": "object"
     },
@@ -337,11 +324,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "key",
-        "operator",
-        "value"
-      ],
+      "required": ["key", "operator", "value"],
       "title": "MetadataComparison",
       "type": "object"
     },
@@ -363,16 +346,13 @@
           "description": "Comparison operator"
         }
       },
-      "required": [
-        "key",
-        "operator"
-      ],
+      "required": ["key", "operator"],
       "title": "MetadataKeyObject",
       "type": "object"
     },
     "OrDicomTagComparison": {
       "properties": {
-        "or_conditions": {
+        "orConditions": {
           "description": "List of search conditions combined with OR",
           "items": {
             "anyOf": [
@@ -388,19 +368,17 @@
             ]
           },
           "minItems": 2,
-          "title": "Or Conditions",
+          "title": "Orconditions",
           "type": "array"
         }
       },
-      "required": [
-        "or_conditions"
-      ],
+      "required": ["orConditions"],
       "title": "OrDicomTagComparison",
       "type": "object"
     },
     "OrDicomTagObject": {
       "properties": {
-        "or_conditions": {
+        "orConditions": {
           "description": "List of search conditions combined with OR",
           "items": {
             "anyOf": [
@@ -416,19 +394,17 @@
             ]
           },
           "minItems": 2,
-          "title": "Or Conditions",
+          "title": "Orconditions",
           "type": "array"
         }
       },
-      "required": [
-        "or_conditions"
-      ],
+      "required": ["orConditions"],
       "title": "OrDicomTagObject",
       "type": "object"
     },
     "OrMetadataComparison": {
       "properties": {
-        "or_conditions": {
+        "orConditions": {
           "description": "List of search conditions combined with OR",
           "items": {
             "anyOf": [
@@ -444,19 +420,17 @@
             ]
           },
           "minItems": 2,
-          "title": "Or Conditions",
+          "title": "Orconditions",
           "type": "array"
         }
       },
-      "required": [
-        "or_conditions"
-      ],
+      "required": ["orConditions"],
       "title": "OrMetadataComparison",
       "type": "object"
     },
     "OrMetadataKeyObject": {
       "properties": {
-        "or_conditions": {
+        "orConditions": {
           "description": "List of search conditions combined with OR",
           "items": {
             "anyOf": [
@@ -472,13 +446,11 @@
             ]
           },
           "minItems": 2,
-          "title": "Or Conditions",
+          "title": "Orconditions",
           "type": "array"
         }
       },
-      "required": [
-        "or_conditions"
-      ],
+      "required": ["orConditions"],
       "title": "OrMetadataKeyObject",
       "type": "object"
     }
@@ -520,12 +492,20 @@
       ],
       "default": null,
       "description": "\n            Ensures that every element in the grid has the same value. For example, by specifying {\"client_metadata\": { \"key\": \"group\", operation: \"=\" }}, every\n            data unit in the layout will have its \"group\" value equal to the data unit's \"group\" value."
+    },
+    "settings": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/EditorLayoutSettings"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     }
   },
-  "required": [
-    "grid",
-    "gridContent"
-  ],
-  "title": "ProjectLayoutInput",
+  "required": ["grid", "gridContent"],
+  "title": "EditorLayoutInput",
   "type": "object"
 }
