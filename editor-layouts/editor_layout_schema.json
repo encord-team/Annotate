@@ -113,6 +113,12 @@
     "ContentQuery": {
       "additionalProperties": false,
       "properties": {
+        "readonly": {
+          "default": false,
+          "description": "Flag indicating if this tile does not need to be annotated",
+          "title": "Readonly",
+          "type": "boolean"
+        },
         "dicomTagsQuery": {
           "anyOf": [
             {

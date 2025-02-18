@@ -26,12 +26,12 @@
           {
             "tag": "00185101",
             "operator": "=",
-            "value": "CC"
+            "value": "MLO"
           },
           {
             "tag": "00200062",
             "operator": "=",
-            "value": "R"
+            "value": "L"
           }
         ]
       }
@@ -42,12 +42,12 @@
           {
             "tag": "00185101",
             "operator": "=",
-            "value": "MLO"
+            "value": "CC"
           },
           {
             "tag": "00200062",
             "operator": "=",
-            "value": "L"
+            "value": "R"
           }
         ]
       }

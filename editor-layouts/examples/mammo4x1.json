@@ -1,5 +1,5 @@
 {
-  "grid": [[0], [1], [2], [3]],
+  "grid": [[0, 1, 2, 3]],
   "gridContent": {
     "0": {
       "dicomTagsQuery": {

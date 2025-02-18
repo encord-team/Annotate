@@ -2,16 +2,16 @@ Custom Editor Layouts are uploaded to an Encord Project as JSON files. The follo
 
 ## [mammo2x2](examples/mammo2x2.json)
 
-![mammo2x2-preview](static/mammo2x2.png)
+![mammo2x2-preview](static/two-by-two.png)
 
 ## [mammo4x1](examples/mammo4x1.json)
 
-![mammo4x1-preview](static/mammo4x1.png)
+![mammo4x1-preview](static/four-by-one.png)
 
 ## [mammo2x2-plus-report](examples/mammo2x2-plus-report.json)
 
-![mammo2x2-plus-report-preview](static/mammo2x2-plus-report.png)
+![mammo2x2-plus-report-preview](static/two-by-two-plus-report.png)
 
 ## [metadata2x1](examples/metadata2x1.json)
 
-![metadata2x1-preview](static/metadata2x1.png)
+![metadata2x1-preview](static/metadata-2-by-1.png)
