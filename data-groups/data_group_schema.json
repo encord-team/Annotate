@@ -1,0 +1,238 @@
+{
+  "$defs": {
+    "DataUnitListTile": {
+      "properties": {
+        "type": {
+          "const": "data_unit_list",
+          "default": "data_unit_list",
+          "enum": [
+            "data_unit_list"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "keys": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Keys",
+          "type": "array"
+        }
+      },
+      "required": [
+        "keys"
+      ],
+      "title": "DataUnitListTile",
+      "type": "object"
+    },
+    "DataUnitTile": {
+      "properties": {
+        "type": {
+          "const": "data_unit",
+          "default": "data_unit",
+          "enum": [
+            "data_unit"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "key": {
+          "title": "Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key"
+      ],
+      "title": "DataUnitTile",
+      "type": "object"
+    },
+    "LayoutGrid": {
+      "properties": {
+        "direction": {
+          "enum": [
+            "row",
+            "column"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "first": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LayoutGrid"
+            },
+            {
+              "discriminator": {
+                "mapping": {
+                  "data_unit": "#/$defs/DataUnitTile",
+                  "data_unit_list": "#/$defs/DataUnitListTile"
+                },
+                "propertyName": "type"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/DataUnitTile"
+                },
+                {
+                  "$ref": "#/$defs/DataUnitListTile"
+                }
+              ]
+            }
+          ],
+          "title": "First"
+        },
+        "second": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LayoutGrid"
+            },
+            {
+              "discriminator": {
+                "mapping": {
+                  "data_unit": "#/$defs/DataUnitTile",
+                  "data_unit_list": "#/$defs/DataUnitListTile"
+                },
+                "propertyName": "type"
+              },
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/DataUnitTile"
+                },
+                {
+                  "$ref": "#/$defs/DataUnitListTile"
+                }
+              ]
+            }
+          ],
+          "title": "Second"
+        },
+        "splitPercentage": {
+          "maximum": 95.0,
+          "minimum": 5.0,
+          "title": "Splitpercentage",
+          "type": "number"
+        }
+      },
+      "required": [
+        "direction",
+        "first",
+        "second",
+        "splitPercentage"
+      ],
+      "title": "LayoutGrid",
+      "type": "object"
+    },
+    "LayoutSettings": {
+      "properties": {
+        "fixedLayout": {
+          "default": false,
+          "description": "Set layout to fixed, so you can't add/remove panes or change to a different layout",
+          "title": "Fixedlayout",
+          "type": "boolean"
+        },
+        "tileSettings": {
+          "anyOf": [
+            {
+              "additionalProperties": {
+                "$ref": "#/$defs/TileSettings"
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tilesettings"
+        }
+      },
+      "title": "LayoutSettings",
+      "type": "object"
+    },
+    "TileSettings": {
+      "properties": {
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional title that will be displayed in the toolbar",
+          "title": "Title"
+        },
+        "isReadOnly": {
+          "default": false,
+          "description": "If true, the tile will be read-only and no annotations can be added to it",
+          "title": "Isreadonly",
+          "type": "boolean"
+        }
+      },
+      "title": "TileSettings",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    },
+    "settings": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LayoutSettings"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "layoutType": {
+      "const": "custom",
+      "default": "custom",
+      "enum": [
+        "custom"
+      ],
+      "title": "Layouttype",
+      "type": "string"
+    },
+    "layoutContents": {
+      "additionalProperties": {
+        "format": "uuid",
+        "type": "string"
+      },
+      "title": "Layoutcontents",
+      "type": "object"
+    },
+    "layout": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LayoutGrid"
+        },
+        {
+          "$ref": "#/$defs/DataUnitListTile"
+        }
+      ],
+      "title": "Layout"
+    }
+  },
+  "required": [
+    "layoutContents",
+    "layout"
+  ],
+  "title": "DataGroupInputCustomLayout",
+  "type": "object"
+}

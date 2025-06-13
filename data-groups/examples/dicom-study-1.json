@@ -1,0 +1,34 @@
+{
+  "name": "DICOM Mammography Study",
+  "layout_contents": {
+    "RMLO": "<storage_item_id>",
+    "LMLO": "<storage_item_id>",
+    "RCC": "<storage_item_id>",
+    "LCC": "<storage_item_id>"
+  },
+  "layout": {
+    "direction": "column",
+    "first": {
+      "direction": "row",
+      "first": {
+        "key": "RMLO"
+      },
+      "second": {
+        "key": "LMLO"
+      },
+      "split_percentage": 50.0
+    },
+    "second": {
+      "direction": "row",
+      "first": {
+        "key": "RCC"
+      },
+      "second": {
+        "key": "LCC"
+      },
+      "split_percentage": 50.0
+    },
+    "split_percentage": 50.0
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/data-groups/data_group_schema.json"
+}
