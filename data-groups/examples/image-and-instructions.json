@@ -1,28 +1,26 @@
 {
   "name": "Image + read only instructions",
   "settings": {
-    "tile_settings": {
+    "tileSettings": {
       "instructions": {
         "title": "Follow the instructions below to annotate the image on the right",
-        "is_read_only": true
+        "isReadOnly": true
       }
     }
   },
-  "layout_contents": {
+  "layoutContents": {
     "instructions": "<storage_item_id>",
     "image": "<storage_item_id>"
   },
   "layout": {
     "direction": "row",
     "first": {
-      "type": "data_unit",
       "key": "instructions"
     },
     "second": {
-      "type": "data_unit",
       "key": "image"
     },
-    "split_percentage": 30.0
+    "splitPercentage": 30.0
   },
   "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/data-groups/data_group_schema.json"
 }
