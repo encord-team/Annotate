@@ -1,4 +1,4 @@
-## How do use these examples
+## How to use these examples
 
 1. Copy the `.json` files in the examples folder and replace `<storage_item_id>` with the IDs of the files you want to group. You can find the IDs in the Encord app or by using `list_items()` on a folder:
 
