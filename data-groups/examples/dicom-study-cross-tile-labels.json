@@ -1,0 +1,57 @@
+{
+  "name": "DICOM Mammography Study (cross-tile label panel)",
+  "settings": {
+    "labelPanel": {
+      "showAllTiles": true
+    },
+    "tileSettings": {
+      "RMLO": {
+        "title": "Right MLO"
+      },
+      "LMLO": {
+        "title": "Left MLO"
+      },
+      "RCC": {
+        "title": "Right CC"
+      },
+      "LCC": {
+        "title": "Left CC"
+      }
+    }
+  },
+  "layoutContents": {
+    "RMLO": "<storage_item_id>",
+    "LMLO": "<storage_item_id>",
+    "RCC": "<storage_item_id>",
+    "LCC": "<storage_item_id>"
+  },
+  "layout": {
+    "direction": "column",
+    "first": {
+      "direction": "row",
+      "first": {
+        "type": "data_unit",
+        "key": "RMLO"
+      },
+      "second": {
+        "type": "data_unit",
+        "key": "LMLO"
+      },
+      "splitPercentage": 50.0
+    },
+    "second": {
+      "direction": "row",
+      "first": {
+        "type": "data_unit",
+        "key": "RCC"
+      },
+      "second": {
+        "type": "data_unit",
+        "key": "LCC"
+      },
+      "splitPercentage": 50.0
+    },
+    "splitPercentage": 50.0
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/data-groups/data_group_schema.json"
+}
