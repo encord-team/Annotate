@@ -123,6 +123,18 @@
       "title": "LayoutGrid",
       "type": "object"
     },
+    "LabelPanelSettings": {
+      "properties": {
+        "showAllTiles": {
+          "default": false,
+          "description": "When true, the left-hand label panel shows annotations from all tiles in the data group as a flat list, rather than only the active tile. Hovering a label in the panel highlights it on the canvas, and vice versa. Clicking a label navigates to the frame it belongs to (for video data units).",
+          "title": "Showalltiles",
+          "type": "boolean"
+        }
+      },
+      "title": "LabelPanelSettings",
+      "type": "object"
+    },
     "LayoutSettings": {
       "properties": {
         "fixedLayout": {
@@ -130,6 +142,19 @@
           "description": "Set layout to fixed, so you can't add/remove panes or change to a different layout",
           "title": "Fixedlayout",
           "type": "boolean"
+        },
+        "labelPanel": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LabelPanelSettings"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Settings for the left-hand label panel",
+          "title": "Labelpanel"
         },
         "tileSettings": {
           "anyOf": [
