@@ -17,19 +17,6 @@
           },
           "title": "Keys",
           "type": "array"
-        },
-        "hoverMetadata": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/HoverMetadataSettings"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "When set, displays each carousel item's file metadata as an overlay on hover. Long values are truncated with an ellipsis.",
-          "title": "Hovermetadata"
         }
       },
       "required": [
@@ -163,28 +150,6 @@
       "title": "LayoutSettings",
       "type": "object"
     },
-    "HoverMetadataSettings": {
-      "properties": {
-        "keys": {
-          "anyOf": [
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "Metadata keys to display on hover. If null or omitted, all available metadata keys will be shown.",
-          "title": "Keys"
-        }
-      },
-      "title": "HoverMetadataSettings",
-      "type": "object"
-    },
     "TileSettings": {
       "properties": {
         "title": {
@@ -205,19 +170,6 @@
           "description": "If true, the tile will be read-only and no annotations can be added to it",
           "title": "Isreadonly",
           "type": "boolean"
-        },
-        "hoverMetadata": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/HoverMetadataSettings"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "description": "When set, displays the file's client metadata as an overlay when hovering over the tile or carousel items. Long values are truncated with an ellipsis.",
-          "title": "Hovermetadata"
         }
       },
       "title": "TileSettings",

@@ -20,26 +20,3 @@
 
    folder.create_data_group(group_input)
    ```
-
-## Carousel metadata preview
-
-When using a `data_unit_list` tile (carousel), you can display each item's file metadata as an overlay when the annotator hovers over it. Set `hoverMetadata` on the carousel tile to enable this:
-
-```json
-{
-  "layout": {
-    "type": "data_unit_list",
-    "keys": ["scan1", "scan2", "scan3"],
-    "hoverMetadata": {
-      "keys": ["patient_id", "study_date", "modality"]
-    }
-  }
-}
-```
-
-- **`keys`** — the list of `client_metadata` keys to show. Omit (or set to `null`) to show all available metadata for the file.
-- Values that are too long to fit in the tile are truncated with an ellipsis.
-
-See [`examples/carousel-with-metadata.json`](examples/carousel-with-metadata.json) for a full example.
-
-You can also enable metadata preview on individual tiles via `TileSettings.hoverMetadata` inside `settings.tileSettings`.
