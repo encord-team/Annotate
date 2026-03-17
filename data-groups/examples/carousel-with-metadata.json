@@ -1,0 +1,16 @@
+{
+  "name": "Carousel with metadata preview",
+  "layoutContents": {
+    "scan1": "<storage_item_id>",
+    "scan2": "<storage_item_id>",
+    "scan3": "<storage_item_id>"
+  },
+  "layout": {
+    "type": "data_unit_list",
+    "keys": ["scan1", "scan2", "scan3"],
+    "hoverMetadata": {
+      "keys": ["patient_id", "study_date", "modality"]
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/data-groups/data_group_schema.json"
+}
