@@ -1,0 +1,14 @@
+{
+  "name": "Image with issue creation enabled",
+  "settings": {
+    "enableIssueCreation": true
+  },
+  "layoutContents": {
+    "image": "<storage_item_id>"
+  },
+  "layout": {
+    "type": "data_unit",
+    "key": "image"
+  },
+  "$schema": "https://raw.githubusercontent.com/encord-team/Annotate/main/data-groups/data_group_schema.json"
+}

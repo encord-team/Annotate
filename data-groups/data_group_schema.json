@@ -131,6 +131,12 @@
           "title": "Fixedlayout",
           "type": "boolean"
         },
+        "enableIssueCreation": {
+          "default": false,
+          "description": "Enable issue creation in the data group from the Annotate interface",
+          "title": "Enableissuecreation",
+          "type": "boolean"
+        },
         "tileSettings": {
           "anyOf": [
             {

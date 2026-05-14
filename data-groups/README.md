@@ -20,3 +20,19 @@
 
    folder.create_data_group(group_input)
    ```
+
+## Settings
+
+### enableIssueCreation
+
+Set `enableIssueCreation` to `true` in the settings to enable issue creation in the data group from the Annotate interface:
+
+```json
+{
+  "settings": {
+    "enableIssueCreation": true
+  }
+}
+```
+
+See [image-with-issues.json](examples/image-with-issues.json) for a complete example.
